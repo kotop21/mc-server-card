@@ -1,14 +1,18 @@
 import "@styles/App.css"
-import Header from '@components/Header'
+import { Header, SearchBar, ServerCard } from '@components';
+import type { ServerCardStatus } from '@typings/serverCardStatus';
+import { useState } from "react";
+import type { ServerData } from "@typings/serverData";
 
 function App() {
+  const [serverCardStatus, setServerCardStatus] = useState<ServerCardStatus>('invisible');
+  const [serverCardData, setServerCardData] = useState<ServerData>();
+
   return (
     <>
       <Header />
-      <button
-        className="btn">
-        Button
-      </button>
+      <SearchBar setServerCardStatus={setServerCardStatus} setServerCardData={setServerCardData} />
+      <ServerCard status={serverCardStatus} serverData={serverCardData} />
     </>
   )
 }
