@@ -23,13 +23,12 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Aliases */
-    "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@typings/*": ["src/typings/*"],
-      "@components": ["src/components/index.ts"],
-      "@utils/*": ["src/utils/*"],
-      "@styles/*": ["src/styles/*"]
+      "@components/*": ["./src/components/*"],
+      "@typings/*": ["./src/typings/*"],
+      "@components": ["./src/components/index.ts"],
+      "@utils/*": ["./src/utils/*"],
+      "@styles/*": ["./src/styles/*"]
     }
   },
   "include": ["src"]

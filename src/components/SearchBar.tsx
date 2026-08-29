@@ -40,7 +40,6 @@ function SearchBar({ setServerCardStatus, setServerCardData }: SearchBarProps) {
         throw new Error(res.error);
       }
 
-      console.log(res.data.players.online);
       setServerCardData(res.data)
 
       setLastSearched(targetAddress.toLowerCase());
