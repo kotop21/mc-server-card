@@ -8,12 +8,30 @@ interface SearchBarProps {
   setServerCardData: (data: ServerData | undefined) => void;
 }
 
+const serverIp = [
+  "hypixel.net",
+  "cubecraft.net",
+  "donutsmp.net",
+  "hivemc.com",
+  "mineplex.com",
+  "2b2t.org",
+  "pika-network.net",
+  "jartexnetwork.com",
+  "manacube.com",
+  "complex-gaming.com"
+]
+
 function SearchBar({ setServerCardStatus, setServerCardData }: SearchBarProps) {
   const [address, setAddress] = useState('');
+  const [hasError, setHasError] = useState(false);
+  const [lastSearched, setLastSearched] = useState('');
+  const [randomServer] = useState(() => {
+    return serverIp[Math.floor(Math.random() * serverIp.length)];
+  });
 
   const handleSearch = async (targetAddress: string) => {
-    console.log('Search server:', targetAddress);
     setServerCardStatus('loading');
+    console.log('Search server:', targetAddress);
 
     try {
       const res = await serverFetch(targetAddress);
@@ -25,10 +43,15 @@ function SearchBar({ setServerCardStatus, setServerCardData }: SearchBarProps) {
       console.log(res.data.players.online);
       setServerCardData(res.data)
 
+      setLastSearched(targetAddress.toLowerCase());
+      setHasError(false);
       setServerCardStatus('visible');
     } catch (err) {
       console.error(err);
+      setLastSearched('');
+      setHasError(true);
       setServerCardStatus('invisible');
+
     }
 
   };
@@ -37,7 +60,7 @@ function SearchBar({ setServerCardStatus, setServerCardData }: SearchBarProps) {
     e.preventDefault();
 
     const trimmed = address.trim();
-    if (trimmed) {
+    if (trimmed && trimmed.toLowerCase() !== lastSearched) {
       handleSearch(trimmed);
     }
   };
@@ -47,7 +70,16 @@ function SearchBar({ setServerCardStatus, setServerCardData }: SearchBarProps) {
       <form onSubmit={handleSubmit}>
         <label className="floating-label w-full">
           <span>Server address</span>
-          <input type="text" onChange={(e) => setAddress(e.target.value)} placeholder="hypixel.net" className="input input-lg w-full" />
+          <input
+            type="text"
+            value={address}
+            onChange={(e) => {
+              setAddress(e.target.value);
+              if (hasError) setHasError(false);
+            }}
+            placeholder={randomServer}
+            className={`input input-lg w-full ${hasError ? 'input-error' : ''}`}
+          />
         </label>
       </form>
     </>

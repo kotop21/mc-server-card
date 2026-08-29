@@ -1,32 +1,59 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# Minecraft Server Card
 
-Currently, two official plugins are available:
+**A simple web app to check Minecraft Java server status and generate a server card by IP or domain.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<br>
 
-## React Compiler
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
+<img src="https://img.shields.io/badge/Vite-6.x-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+<img src="https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+<img src="https://img.shields.io/badge/daisyUI-5.x-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white" alt="daisyUI">
+<img src="https://img.shields.io/badge/Motion-12+-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Motion">
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<br>
 
-## Expanding the Oxlint configuration
+<img src="public/preview.png" width="620" alt="Preview">
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+</div>
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Tech Stack
+
+* [React](https://react.dev/) — UI framework
+* [Vite](https://vite.dev/) — build tool and development server
+* [TypeScript](https://www.typescriptlang.org/) — static typing
+* [Tailwind CSS](https://tailwindcss.com/) & [daisyUI](https://daisyui.com/) — styling and UI components
+* [Motion](https://motion.dev/) — smooth animations and layout transitions
+* [mcstatus.io API](https://mcstatus.io/) — Minecraft server data fetching
+
+## Getting Started
+
+### Install dependencies
+
+```bash
+npm install
+# or
+bun install
+# or
+pnpm install
+
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Run development server
+
+```bash
+npm run dev
+# or
+bun dev
+# or
+pnpm dev
+
+```
+
+### Build for production
+
+```bash
+npm run build
+
+```
