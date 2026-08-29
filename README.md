@@ -58,6 +58,6 @@ npm run build
 
 ```
 
-### License <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="MIT License" align="right">
+### License <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="MIT License">
 
 All project code is available under the [MIT License](LICENSE).
