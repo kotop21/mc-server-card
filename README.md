@@ -2,7 +2,7 @@
 
 # Minecraft Server Card
 
-**A simple web app to check Minecraft Java server status and generate a server card by IP or domain.**
+**A simple web app powered by the [mcstatus.io](https://mcstatus.io/) API to check Minecraft Java server status and generate a server card by IP or domain.**
 
 <br>
 
@@ -22,7 +22,6 @@
 
 * [React](https://react.dev/) — UI framework
 * [Vite](https://vite.dev/) — build tool and development server
-* [TypeScript](https://www.typescriptlang.org/) — static typing
 * [Tailwind CSS](https://tailwindcss.com/) & [daisyUI](https://daisyui.com/) — styling and UI components
 * [Motion](https://motion.dev/) — smooth animations and layout transitions
 * [mcstatus.io API](https://mcstatus.io/) — Minecraft server data fetching
